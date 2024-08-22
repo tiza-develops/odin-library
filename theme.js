@@ -1,3 +1,4 @@
+// Change theme
 const root = document.querySelector("html");
 const toggle = document.querySelector("[data-theme-toggle]");
 
@@ -14,3 +15,4 @@ function switch_theme() {
 toggle.addEventListener("click", () => {
 	switch_theme();
 });
+

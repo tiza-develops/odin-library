@@ -49,11 +49,18 @@ body {
 .header {
 	background-color: var(--overlay);
 	width: 100vw;
-	height: 100vh;
+	height: 10vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	p {
+		margin: 5px;
+	}
 	button {
 		background-color: var(--base);
 		border-style: solid;
 		border-color: var(--text);
 		border-radius: 15px;
 		color: var(--text);
+	}
 }
