@@ -15,6 +15,7 @@ let highlightMed =  "#403d52";
 let highlightHigh =  "#524f67";
 
 // Core application
+// Create div of books
 let books = [];
 
 function Book(title, author, pages, read) {
@@ -22,27 +23,35 @@ function Book(title, author, pages, read) {
 	this.author = author;
 	this.pages = pages;
 	this.read = read;
+	this.info = function() {
+		return console.log(this.title + this.author + this.pages + "pages" + this.read);
+	}
 }
+
 const newBook = new Book("The Communist Manifesto", "Karl Marx", 400, "yes")
 books.push(newBook)
 
 for (let i of books) {
 	const newDiv = document.createElement("div");
-	newDiv.style.backgroundColor = gold;
+	newDiv.style.backgroundColor = pine;
 	newDiv.style.height = "10vw";
 	newDiv.style.width = "10vw";
 	newDiv.style.margin = "5em";
+	newDiv.innerHTML += i.info;
 	document.body.appendChild(newDiv);
 }
 
-const addButton = document.createElement("button");
-addButton.style.backgroundColor = base;
-addButton.style.color = text;
-addButton.style.width = "10vw";
-addButton.style.height = "10vw";
-addButton.style.borderStyle = "solid";
-addButton.style.borderColor = text;
-addButton.style.fontSize = "5vw";
-addButton.style.margin = "5vw";
-addButton.innerHTML = "+";
-document.body.appendChild(addButton);
+function addButton() {
+	const addButton = document.createElement("button");
+	addButton.style.backgroundColor = base;
+	addButton.style.color = text;
+	addButton.style.width = "10vw";
+	addButton.style.height = "10vw";
+	addButton.style.borderStyle = "solid";
+	addButton.style.borderColor = text;
+	addButton.style.fontSize = "5vw";
+	addButton.innerHTML = "+";
+	document.body.appendChild(addButton);
+}
+
+addButton();
